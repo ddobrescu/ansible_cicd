@@ -3,6 +3,12 @@
 - hosts: all
   tasks:
 
+  - name: install epel
+    package:
+      name: epel-release
+      state: present
+
+
   - name: install nginx
     package:
       name: nginx
