@@ -8,9 +8,14 @@
       name: epel-release
       state: present
 
-
   - name: install nginx
     package:
       name: nginx
       state: present
+
+  - name: start and enable nginx
+    service:
+      name: nginx
+      state: running
+      enabled: true
 
