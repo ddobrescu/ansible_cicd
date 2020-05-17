@@ -1,0 +1,10 @@
+---
+
+- hosts: all
+  vars:
+    wstatus: "dev"
+  tasks:
+  
+  - name: check if is for prod
+    debug:
+      msg: "Deploy in {{wstatus}}"
