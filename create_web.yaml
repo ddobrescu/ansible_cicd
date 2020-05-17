@@ -3,6 +3,11 @@
 - hosts: all
   tasks:
 
+
+  - name: validate prod env
+    meta: end_play
+    when: env == 'prod' and not(tower_webhook_payload['ref'] is match('refs/tags/.*'))
+
   - name: install epel
     package:
       name: epel-release
