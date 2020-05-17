@@ -22,7 +22,6 @@
   - name: remove html directory
     file:
       path: /usr/share/nginx/html
-      state: directory
       state: absent
 
   - name: Get last web content
