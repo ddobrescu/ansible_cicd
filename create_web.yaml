@@ -10,7 +10,7 @@
 
   - name: install nginx
     package:
-      name: nginx
+      name: [nginx, git]
       state: present
 
   - name: start and enable nginx
@@ -19,3 +19,14 @@
       state: started
       enabled: true
 
+  - name: remove html directory
+    file:
+      path: /usr/share/nginx/html
+      state: directory
+      state: absent
+
+  - name: Get last web content
+    git:
+      repo: https://github.com/pierreblanc/web_content.git
+      dest: /usr/share/nginx/html
+      force: yes
