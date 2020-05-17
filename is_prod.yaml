@@ -1,0 +1,8 @@
+---
+
+- hosts: all
+  tasks:
+  - name: check if is for prod
+    assert:
+      that:
+      - tower_webhook_payload['ref'] is match('refs/tags/.*')
