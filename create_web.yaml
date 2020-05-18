@@ -21,7 +21,7 @@
       state: started
       enabled: true
 
-  - name: remove html directory
+  - name: remove old html directory
     file:
       path: /usr/share/nginx/html
       state: absent
@@ -30,6 +30,11 @@
     get_url:
       url: "http://build/releases/{{commit}}.tar.gz"
       dest: /root/
+  
+  - name: create html directory
+    file:
+      path: /usr/share/nginx/html
+      state: present
       
   - name: untar release
     unarchive:
