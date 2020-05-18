@@ -33,17 +33,17 @@
   
   - name: create html directory
     file:
-      path: /usr/share/nginx/
+      path: /usr/share/nginx/html
       state: directory
       
   - name: untar release
     unarchive:
       src: /root/{{commit}}.tar.gz
-      dest: /usr/share/nginx/
+      dest: /usr/share/nginx/html
       remote_src: yes
 
-  - name: rename directory
-    command: mv /usr/share/nginx/public /usr/share/nginx/html 
+#  - name: rename directory
+#    command: mv /usr/share/nginx/public /usr/share/nginx/html 
 
   - name: remove release tar
     file:
