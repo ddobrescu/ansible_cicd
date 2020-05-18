@@ -15,6 +15,17 @@
       name: [nginx, git]
       state: present
 
+  - name: Insert releases conf
+    lineinfile:
+      path: /etc/nginx/nginx.conf
+      insertafter: '/usr/share/nginx/html' 
+      line: location /releases/ { autoindex on; }
+
+  - name: Create releases directory
+    file:
+      path: /usr/share/nginx/html/releases
+      state: directory
+
   - name: start and enable nginx
     service:
       name: nginx
@@ -58,16 +69,16 @@
   - name: create release
     archive:
       path: /root/web_content_source/public
-      dest: "/usr/share/nginx/html/{{commit}}.tar.gz"
+      dest: "/usr/share/nginx/html/releases/{{commit}}.tar.gz"
 
   - name: get md5sum
     stat:
-      path: "/usr/share/nginx/html/{{commit}}.tar.gz"
+      path: "/usr/share/nginx/html/releases/{{commit}}.tar.gz"
     register: stat_file
 
   - name: create md5 file
     copy:
-      dest: "/usr/share/nginx/html/{{commit}}.md5"
+      dest: "/usr/share/nginx/html/releases/{{commit}}.md5"
       content: "{{stat_file['stat']['checksum']}}"
 
 
