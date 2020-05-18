@@ -68,7 +68,7 @@
 
   - name: create release
     archive:
-      path: /root/web_content_source/public
+      path: /root/web_content_source/public/*
       dest: "/usr/share/nginx/html/releases/{{commit}}.tar.gz"
 
   - name: get md5sum
