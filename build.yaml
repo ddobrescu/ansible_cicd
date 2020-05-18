@@ -2,7 +2,7 @@
 
 - hosts: all
   vars:
-    commit: "latest" 
+    commit: "{{tower_webhook_payload['head_commit']['id']|default('latest')}}" 
   tasks:
 
   - name: install epel
