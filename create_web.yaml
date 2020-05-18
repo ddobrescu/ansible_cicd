@@ -1,6 +1,8 @@
 ---
 
 - hosts: all
+  vars:
+    commit: "latest" 
   tasks:
 
   - name: install epel
@@ -24,8 +26,21 @@
       path: /usr/share/nginx/html
       state: absent
 
-  - name: Get last web content
-    git:
-      repo: https://github.com/pierreblanc/web_content.git
+  - name: Get release tar
+    get_url:
+      url: "http://build/releases/{{commit}}.tar.gz"
+      dest: /root/
+      
+  - name: untar release
+    unarchive:
+      src: /root/{{commit}}.tar.gz
       dest: /usr/share/nginx/html
-      force: yes
+      remote_src: yes
+
+  - name: remove release tar
+    file:
+      path: /root/{{commit}}.tar.gz
+      state: absent
+
+
+
