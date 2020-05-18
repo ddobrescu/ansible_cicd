@@ -1,6 +1,8 @@
 ---
 
 - hosts: all
+  vars:
+    commit: "latest" 
   tasks:
 
   - name: install epel
@@ -35,3 +37,16 @@
     command: hugo -D
     args:
       chdir: /root/web_content_source
+
+  - name: Get Release repo
+    git:
+      repo: https://github.com/pierreblanc/web_content_source.git
+      dest: /root/web_content_source
+      force: yes
+
+
+  - name: create release
+    archive:
+      path: /root/web_content_source/public
+      dest: "/root/{{commit}}.tar.gz"
+
