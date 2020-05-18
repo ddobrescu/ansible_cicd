@@ -68,6 +68,6 @@
   - name: create md5 file
     copy:
       path: "/usr/share/nginx/html/{{commit}}.md5"
-      content: {{stat_file['stat']['checksum']}}
+      content: "{{stat_file['stat']['checksum']}}"
 
 
