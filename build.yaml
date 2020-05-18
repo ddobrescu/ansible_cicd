@@ -10,11 +10,21 @@
       name: epel-release
       state: present
 
-  - name: Install git
+  - name: Install package
     package:
-      name: git
+      name: [nginx, git]
       state: present
 
+  - name: start and enable nginx
+    service:
+      name: nginx
+      state: started
+      enabled: true
+
+  - name: remove html directory
+    file:
+      path: /usr/share/nginx/html/index.html
+      state: absent
 
   - name: Download hugo
     get_url:
@@ -48,5 +58,16 @@
   - name: create release
     archive:
       path: /root/web_content_source/public
-      dest: "/root/{{commit}}.tar.gz"
+      dest: "/usr/share/nginx/html/{{commit}}.tar.gz"
+
+  - name: get md5sum
+    stat:
+      path: "/usr/share/nginx/html/{{commit}}.tar.gz"
+    register: stat_file
+
+  - name: create md5 file
+    copy:
+      path: "/usr/share/nginx/html/{{commit}}.md5"
+      content: {{stat_file['stat']['checksum']}}
+
 
