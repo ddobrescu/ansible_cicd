@@ -28,10 +28,10 @@
   - name: Get last web content
     git:
       repo: https://github.com/pierreblanc/web_content_source.git
-      dest: /root/
+      dest: /root/web_content_source
       force: yes
 
   - name: Build File
     command: hugo -D
     args:
-      chdir: /root/web_content
+      chdir: /root/web_content_source
