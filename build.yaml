@@ -17,9 +17,15 @@
     unarchive:
       src: /root/hugo_0.70.0_Linux-64bit.tar.gz
       dest: /usr/bin/
+      remote_src: yes
 
   - name: Get last web content
     git:
-      repo: https://github.com/pierreblanc/web_content.git
+      repo: https://github.com/pierreblanc/web_content_source.git
       dest: /root/
       force: yes
+
+  - name: Build File
+    command: hugo -D
+    args:
+      chdir: /root/web_content
