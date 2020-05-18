@@ -34,7 +34,7 @@
   - name: create html directory
     file:
       path: /usr/share/nginx/html
-      state: present
+      state: directory
       
   - name: untar release
     unarchive:
