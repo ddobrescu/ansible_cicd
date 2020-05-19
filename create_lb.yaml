@@ -13,6 +13,11 @@
       name: haproxy
       state: present
 
+  - name: copy haproxy conf
+    copy:
+      src: haproxy.cfg
+      dest: /etc/haproxy.cfg
+
   - name: start and enable haproxy
     service:
       name: haproxy
