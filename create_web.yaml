@@ -1,6 +1,6 @@
 ---
 
-- hosts: prod-*
+- hosts: prod-*,dev
   vars:
     commit: "{{tower_webhook_payload['head_commit']['id']|default('latest')}}" 
   tasks:
