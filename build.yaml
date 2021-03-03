@@ -22,7 +22,7 @@
   - name: Insert releases conf
     lineinfile:
       path: /etc/nginx/nginx.conf
-      insertafter: '^root         /usr/share/nginx/html' 
+      insertafter: '^include /etc/nginx/default.d/*.conf' 
       line: location /releases/ { autoindex on; }
 
   - name: Create releases directory
