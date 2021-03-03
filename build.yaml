@@ -5,7 +5,7 @@
     commit: "{{tower_webhook_payload['head_commit']['id']|default('latest')}}" 
   tasks:
   - name: Ensure epel repo present
-      yum:
+    yum:
       name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
       state: present
 
