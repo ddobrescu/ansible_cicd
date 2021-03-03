@@ -4,11 +4,15 @@
   vars:
     commit: "{{tower_webhook_payload['head_commit']['id']|default('latest')}}" 
   tasks:
-
-  - name: install epel
-    package:
-      name: epel-release
+  - name: Ensure epel repo present
+      yum:
+      name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
       state: present
+
+#  - name: install epel
+#    package:
+#      name: epel-release
+#      state: present
 
   - name: Install package
     package:
