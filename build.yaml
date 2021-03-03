@@ -19,11 +19,17 @@
       name: [nginx, git]
       state: present
 
-  - name: Insert releases conf
-    lineinfile:
-      path: /etc/nginx/nginx.conf
-      insertafter: '^include /etc/nginx/default.d/*.conf' 
-      line: location /releases/ { autoindex on; }
+#  - name: Insert releases conf
+#    lineinfile:
+#      path: /etc/nginx/nginx.conf
+#      insertafter: '^include /etc/nginx/default.d/*.conf' 
+#      line: location /releases/ { autoindex on; }
+
+  - name: Nginx conf
+    template:
+      src: /templates/nginx.conf.j2
+      dest: /etc/nginx/nginx.conf
+
 
   - name: Create releases directory
     file:
