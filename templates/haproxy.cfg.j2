@@ -91,6 +91,6 @@ backend app-main
     option httpchk HEAD / HTTP/1.1\r\nHost:\ localhost    #Check the server application is up and healty - 200 status code
     
 {%for host in groups['tag_dev_web']%}
-    {{sever hostvars[host]['ansible_hostname'] hostvars[host]['ansible_default_ipv4']:80 check}}
+{{sever hostvars[host]['ansible_hostname'] hostvars[host]['ansible_default_ipv4']:80 check}}
 {%endfor%}
    
