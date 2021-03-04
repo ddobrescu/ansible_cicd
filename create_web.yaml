@@ -5,9 +5,9 @@
     commit: "{{tower_webhook_payload['head_commit']['id']|default('latest')}}" 
   tasks:
 
-  - name: install epel
-    package:
-      name: epel-release
+  - name: Ensure epel repo present
+    yum:
+      name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
       state: present
 
   - name: install nginx
@@ -41,9 +41,6 @@
       src: /root/{{commit}}.tar.gz
       dest: /usr/share/nginx/html
       remote_src: yes
-
-#  - name: rename directory
-#    command: mv /usr/share/nginx/public /usr/share/nginx/html 
 
   - name: remove release tar
     file:

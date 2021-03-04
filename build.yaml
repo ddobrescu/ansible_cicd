@@ -9,23 +9,12 @@
       name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
       state: present
 
-#  - name: install epel
-#    package:
-#      name: epel-release
-#      state: present
-
   - name: Install package
     package:
       name: [nginx, git]
       state: present
 
-#  - name: Insert releases conf
-#    lineinfile:
-#      path: /etc/nginx/nginx.conf
-#      insertafter: '^include /etc/nginx/default.d/*.conf' 
-#      line: location /releases/ { autoindex on; }
-
-  - name: Nginx conf
+  - name: Nginx conf template
     template:
       src: templates/nginx.conf.j2
       dest: /etc/nginx/nginx.conf
@@ -60,7 +49,7 @@
 
   - name: Get last web content
     git:
-      repo: https://github.com/pierreblanc/web_content_source.git
+      repo: https://github.com/ddobrescu/web_content_source.git
       dest: /root/web_content_source
       force: yes
 
@@ -68,13 +57,6 @@
     command: hugo -D
     args:
       chdir: /root/web_content_source
-
-  - name: Get Release repo
-    git:
-      repo: https://github.com/pierreblanc/web_content_source.git
-      dest: /root/web_content_source
-      force: yes
-
 
   - name: create release
     archive:
