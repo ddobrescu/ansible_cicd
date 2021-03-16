@@ -9,7 +9,7 @@
 - hosts: tag_AWS_dev_web
   vars:
     commit: "{{tower_webhook_payload['head_commit']['id']|default('latest')}}" 
-    build: "{{ hostvars["tag_AWS_dev_build"]["build"] }}"
+    build: "{{ hostvars['tag_AWS_dev_build']['build'] }}"
   tasks:
   - name: debug
     debug: msg="{{ build }}"
