@@ -4,9 +4,7 @@
   tasks: 
     - name: Get Build IP 
       set_fact: 
-#        build: "{{ ansible_default_ipv4.address }}"
-        build: "{{ groups['tag_AWS_dev_build'] | map('extract', hostvars, ['build'])
-
+        build: "{{ ansible_default_ipv4.address }}"
 
     - name: debug
       debug: msg="{{ build }}"
@@ -14,8 +12,13 @@
 - hosts: tag_AWS_dev_web
   vars:
     commit: "{{tower_webhook_payload['head_commit']['id']|default('latest')}}" 
-    build: "{{ hostvars['tag_AWS_dev_build']['build'] }}"
+ #   build: "{{ hostvars['tag_AWS_dev_build']['build'] }}"
+
   tasks:
+  - name: set build IP 
+    set_fact: 
+      build: "{{ groups['tag_AWS_dev_build'] | map('extract', hostvars, ['build'])
+
   - name: debug
     debug: msg="{{ build }}"
 
