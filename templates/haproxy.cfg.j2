@@ -2,7 +2,7 @@
 # Example configuration for a possible web application.  See the
 # full configuration options online.
 #
-#   http://haproxy.1wt.eu/download/1.4/doc/configuration.txt
+#   https://www.haproxy.org/download/1.8/doc/configuration.txt
 #
 #---------------------------------------------------------------------
 
@@ -35,6 +35,10 @@ global
     # turn on stats unix socket
     stats socket /var/lib/haproxy/stats
 
+    # utilize system-wide crypto-policies
+    ssl-default-bind-ciphers PROFILE=SYSTEM
+    ssl-default-server-ciphers PROFILE=SYSTEM
+
 #---------------------------------------------------------------------
 # common defaults that all the 'listen' and 'backend' sections will
 # use if not designated in their block
@@ -57,41 +61,28 @@ defaults
     timeout check           10s
     maxconn                 3000
 
-
 #---------------------------------------------------------------------
-#HAProxy Monitoring Config
-#---------------------------------------------------------------------
-listen haproxy3-monitoring *:8080                #Haproxy Monitoring run on port 8080
-    mode http
-    option forwardfor
-    option httpclose
-    stats enable
-    stats show-legends
-    stats refresh 5s
-    stats uri /stats                             #URL for HAProxy monitoring
-    stats realm Haproxy\ Statistics
-    stats auth howtoforge:howtoforge            #User and Password for login to the monitoring dashboard
-    stats admin if TRUE
-    default_backend app-main                    #This is optionally for monitoring backend
- 
-#---------------------------------------------------------------------
-# FrontEnd Configuration
+# main frontend which proxys to the backends
 #---------------------------------------------------------------------
 frontend main
     bind *:80
+    default_backend             app
     option http-server-close
     option forwardfor
-    default_backend app-main
- 
+
 #---------------------------------------------------------------------
-# BackEnd roundrobin as balance algorithm
+# static backend for serving up images, stylesheets and such
 #---------------------------------------------------------------------
-backend app-main
-    balance roundrobin                                     #Balance algorithm
-    option httpchk HEAD / HTTP/1.1\r\nHost:\ localhost    #Check the server application is up and healty - 200 status code
-    
+backend static
+    balance     roundrobin
+    server      static 127.0.0.1:4331 check
+
+#---------------------------------------------------------------------
+# round robin balancing between the various backends
+#---------------------------------------------------------------------
+backend app
+    balance     roundrobin
     {% for host in groups['tag_AWS_dev_web'] %}
-        server {{ host }} {{ hostvars[host]['ansible_default_ipv4'] }}:80 check
-      server {{ hostvars[host]['ansible_hostname'] }} {{ host }}:80 check
+    server {{ hostvars[host]['ansible_hostname'] }} {{ host }}:80 check
     {% endfor %}
  
