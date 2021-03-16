@@ -24,7 +24,7 @@
           name: haproxy
           state: started
           enabled: true
-    when: "'tag_dev_lb' in group_names"
+    when: "'tag_AWS_dev_lb' in group_names"
 
 
 
