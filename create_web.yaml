@@ -1,8 +1,9 @@
 ---
 
-- hosts: prod-*,dev
+- hosts: all
   vars:
     commit: "{{tower_webhook_payload['head_commit']['id']|default('latest')}}" 
+    build: "100.26.222.139/"
   tasks:
 
   - name: Ensure epel repo present
@@ -28,7 +29,7 @@
 
   - name: Get release tar
     get_url:
-      url: "http://build/releases/{{commit}}.tar.gz"
+      url: "http://{{ build }}/releases/{{commit}}.tar.gz"
       dest: /root/
   
   - name: create html directory
