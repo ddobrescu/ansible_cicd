@@ -17,7 +17,7 @@
   tasks:
   - name: set build IP 
     set_fact: 
-      build: "{{ groups['tag_AWS_dev_build'] | map('extract', hostvars, ['build']) | list }}" 
+      build: "{{ groups['tag_AWS_dev_build'] | map('extract', hostvars, ['build']) | list | first }}" 
   - name: debug
     debug: msg="{{ build }}"
 
