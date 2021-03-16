@@ -92,5 +92,6 @@ backend app-main
     
     {% for host in groups['tag_AWS_dev_web'] %}
         server {{ host }} {{ hostvars[host]['ansible_default_ipv4'] }}:80 check
+        hostvars[host]['ansible_hostname']
     {% endfor %}
  
