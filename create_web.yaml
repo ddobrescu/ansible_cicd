@@ -5,6 +5,8 @@
     - name: Get Build IP 
       set_fact: 
         build: "{{ ansible_default_ipv4.address }}"
+      delegate_to: localhost
+      delegate_facts: true
     - name: debug
       debug: msg="{{ build }}"
 
