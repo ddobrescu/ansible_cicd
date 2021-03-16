@@ -70,7 +70,7 @@
         Name: "{{ instance_name }}"
         Owner: Dan
         AWS: "{{ env }}_{{ tag_group }}"
-        project: "{{ project_name | default('none') }}
+        project: "{{ project_name | default('none') }}"
       vpc_subnet_id: "{{subnet_ids.subnets[0].id}}"
       assign_public_ip: yes
     register: ec2_instance  
