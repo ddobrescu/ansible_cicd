@@ -90,7 +90,7 @@ backend app-main
     balance roundrobin                                     #Balance algorithm
     option httpchk HEAD / HTTP/1.1\r\nHost:\ localhost    #Check the server application is up and healty - 200 status code
     
-{%for host in groups['tag_dev_web']%}
-{{sever hostvars[host]['ansible_hostname'] hostvars[host]['ansible_default_ipv4']:80 check}}
-{%endfor%}
-   
+    {% for host in groups['tag_dev_web'] %}
+        server {{ host }} {{ hostvars[host]['ansible_' + iface].ipv4.address }}:80 check
+    {% endfor %}
+ 
