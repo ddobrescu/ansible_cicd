@@ -1,10 +1,18 @@
 ---
 
-- hosts: all
+- hosts: tag_AWS_dev_build
+  tasks: 
+    - name: Get Build IP 
+      set_fact: 
+        build: "{{ ansible_default_ipv4.address }}"
+
+- hosts: tag_AWS_dev_web
   vars:
     commit: "{{tower_webhook_payload['head_commit']['id']|default('latest')}}" 
-    build: "100.26.222.139/"
+    build: hostvars["tag_AWS_dev_build"]["build"]
   tasks:
+  - name: debug
+    debug: "{{ build }}"
 
   - name: Ensure epel repo present
     yum:
