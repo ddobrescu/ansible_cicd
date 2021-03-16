@@ -1,0 +1,16 @@
+---
+- name: Delete VMs
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks:
+  vars:
+    region: us-east-1
+
+  - name: Delete EC2 vms with project name {{ project_name }} 
+    amazon.aws.ec2:
+      instance_tags:
+        project_name: '{{ demoing }}'
+      region: '{{ region }}'
+      state: absent
+      wait: True
