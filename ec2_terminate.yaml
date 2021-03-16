@@ -11,6 +11,6 @@
       amazon.aws.ec2:
         instance_tags:
           project_name: '{{ project_name_tag }}'
-        region: '{{ region }}'
-        state: absent
-        wait: True
+       region: '{{ region }}'
+       state: absent
+       wait: True
