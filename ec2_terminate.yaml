@@ -10,5 +10,5 @@
       instance_tags:
         project_name: "{{ project_name_tag }}"
       region: us-east-1
-      state: absent
+      state: stop
       wait: True
