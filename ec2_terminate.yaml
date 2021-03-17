@@ -4,13 +4,11 @@
   connection: local
   gather_facts: false
   tasks:
-  vars:
-    region: us-east-1
 
-    - name: Delete EC2 vms with project name {{ project_name }} 
-      amazon.aws.ec2:
-        instance_tags:
-          project_name: '{{ project_name_tag }}'
-       region: '{{ region }}'
-       state: absent
-       wait: True
+  - name: Delete EC2 vms with project name "{{ project_name_tag }}"
+    ec2:
+      instance_tags:
+        project_name: "{{ project_name_tag }}"
+      region: us-east-1
+      state: absent
+      wait: True
