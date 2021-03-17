@@ -5,6 +5,15 @@
   gather_facts: false
   tasks:
 
+  - ec2_instance_info:
+      filters:
+        "tag:project": "{{ project_name_tag }}"
+    register: ec2_instances
+
+  - debug: 
+      msg: "{{ ec2_instances }}"
+
+
   - name: Delete EC2 vms with project name "{{ project_name_tag }}"
     ec2:
       instance_tags:
