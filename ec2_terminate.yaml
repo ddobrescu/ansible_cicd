@@ -5,19 +5,19 @@
   gather_facts: false
   tasks:
 
-  - ec2_instance_info:
+  - ec2_instance_facts:
+      region: "{{ region | default('us-east-1') }}"
       filters:
-        "tag:project": "{{ project_name_tag }}"
-    register: ec2_instances
+        "tag:project": "{{ ec2_tag_name }}"
+    register: ec2_list
 
   - debug: 
-      msg: "{{ ec2_instances }}"
+      msg: "{{ ec2_list }}"
 
 
-  - name: Delete EC2 vms with project name "{{ project_name_tag }}"
+  - name: Delete EC2 vms with project name "{{ ec2_tag_name }}"
     ec2:
-      instance_tags:
-        project_name: "{{ project_name_tag }}"
       region: us-east-1
-      state: stopped
+      state: 'stopped'
       wait: True
+    with_items: "{{ ec2_list }}"
