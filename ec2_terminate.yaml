@@ -12,7 +12,7 @@
     register: ec2_list
 
   - debug: 
-      msg: "{{ ec2_list }}"
+      msg: "{{ ec2_list.instance_id }}"
 
 
   - name: Delete EC2 vms with project name "{{ ec2_tag_name }}"
