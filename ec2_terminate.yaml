@@ -13,7 +13,7 @@
 
   - debug: 
       msg: "{{ item.instances.instance_id }}"
-   with_items: "{{ ec2_list }}"
+    with_items: "{{ ec2_list }}"
 
 
   - name: Delete EC2 vms with project name "{{ ec2_tag_name }}"
