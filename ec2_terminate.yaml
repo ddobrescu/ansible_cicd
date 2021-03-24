@@ -12,8 +12,8 @@
     register: ec2_list
 
   - debug: 
-      msg: "{{ item.instance_id }}"
-    loop: "{{ ec2_list.instances }}"
+      msg: "{{ ec2_list.instances[].instance_id }}"
+ #   loop: "{{ ec2_list }}"
 
 
   - name: Delete EC2 vms with project name "{{ ec2_tag_name }}"
