@@ -12,7 +12,8 @@
     register: ec2_list
 
   - debug: 
-      msg: "{{ ec2_list.instances[].instance_id }}"
+      mgs: "{{ ec2_list.instances[0].instance_id }}"
+#      msg: "{{ ec2_list.instances[].instance_id }}"
  #   loop: "{{ ec2_list }}"
 
 
