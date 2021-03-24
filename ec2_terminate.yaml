@@ -12,8 +12,8 @@
     register: ec2_list
 
   - debug: 
-      msg: "{{ item }}"
-    with_items: "{{ ec2_list }}"
+      msg: "{{ ec2_list }}"
+#    with_items: "{{ ec2_list }}"
 
 
   - name: Delete EC2 vms with project name "{{ ec2_tag_name }}"
