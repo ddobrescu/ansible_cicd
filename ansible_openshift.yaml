@@ -1,4 +1,6 @@
 - hosts: localhost
+  collections: 
+  - redhat.openshift
   module_defaults:
     group/k8s:
       host: https://k8s.example.com/
