@@ -1,7 +1,0 @@
----
-collections:
-  - src: https://github.com/ddobrescu/openshift_ansible
-    version: master
-    name: redhat.openshift
-  
-  - name: community.okd
