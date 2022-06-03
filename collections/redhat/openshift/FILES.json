@@ -1,0 +1,866 @@
+{
+ "files": [
+  {
+   "name": ".",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": ".yamllint",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "5845e18e9f23155f423207df9abac970aed687c638620bc2c9ee06706191054b",
+   "format": 1
+  },
+  {
+   "name": "tests",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/unit",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/unit/requirements.txt",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "8004a972c3d5c274d8c808e8d8afe03b9aca8af8eebf3df4298f114d8008b754",
+   "format": 1
+  },
+  {
+   "name": "tests/unit/plugins",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/unit/plugins/module_utils",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/unit/plugins/module_utils/test_openshift_docker_image.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "64dc6167474eda7637cea56f0a87f0d39bd2a3ffa60405e1add4b98d282c8012",
+   "format": 1
+  },
+  {
+   "name": "tests/unit/plugins/module_utils/test_ldap_dn.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "444e8026220dc12e8b8e5c5fedfdf2e1bd8dc61afdbc3ecf75651d0c71129756",
+   "format": 1
+  },
+  {
+   "name": "tests/unit/plugins/module_utils/test_ldap_sync_config.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "6af10b15c912bd2e405d9e7431a85014cb67b8de17ad670e7dd0e3530041cd75",
+   "format": 1
+  },
+  {
+   "name": "tests/unit/plugins/modules",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/unit/plugins/modules/test_openshift_adm_migrate_template_instances.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "ec6d6c050b691d20bcf32163163a2a3b5c1f1882be7bfe209775a6bd168f42c4",
+   "format": 1
+  },
+  {
+   "name": "tests/sanity",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/sanity/ignore-2.14.txt",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "a15e183dac90a7ccf28b138e42a16d2d358e38488e88a535186c2170649bc197",
+   "format": 1
+  },
+  {
+   "name": "tests/sanity/ignore-2.10.txt",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "ba2285dad70183ce56e9d43ed97d4b7a1b12e7cdd3f4e5856fb3cf380148a5ee",
+   "format": 1
+  },
+  {
+   "name": "tests/sanity/ignore-2.13.txt",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "a15e183dac90a7ccf28b138e42a16d2d358e38488e88a535186c2170649bc197",
+   "format": 1
+  },
+  {
+   "name": "tests/sanity/ignore-2.9.txt",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "cf94385a1d8a2b51f40f88879b59922c8a8b07b8f1e0ac511a2454e257361995",
+   "format": 1
+  },
+  {
+   "name": "tests/sanity/ignore-2.12.txt",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "a15e183dac90a7ccf28b138e42a16d2d358e38488e88a535186c2170649bc197",
+   "format": 1
+  },
+  {
+   "name": "tests/sanity/ignore-2.11.txt",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "ba2285dad70183ce56e9d43ed97d4b7a1b12e7cdd3f4e5856fb3cf380148a5ee",
+   "format": 1
+  },
+  {
+   "name": "README.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "7616c0285f9f849d57ae74568c252e1ec676900e2a6bfe75558dc0af3231ff8e",
+   "format": 1
+  },
+  {
+   "name": "changelogs",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "changelogs/changelog.yaml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "93326aead41fbca7b66f2b3cf4a7f96c840e9db42c86248e5a91ee4b90f60132",
+   "format": 1
+  },
+  {
+   "name": "changelogs/config.yaml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "18fccefac03b996a261d5193f70a8c956c07c6c41643a78951d1cc3399f3180c",
+   "format": 1
+  },
+  {
+   "name": "changelogs/.plugin-cache.yaml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "a5b87fedd68c709721b3c15b66d4e2d631f15530cbaf0732f6754868aca3b234",
+   "format": 1
+  },
+  {
+   "name": "requirements.txt",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "d20fa49248fb968b70381346d2b2f6195e19dc1ddded06856bc4aefa6a25d431",
+   "format": 1
+  },
+  {
+   "name": "meta",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "meta/runtime.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "186f29e5a64d8242c7df70fe8a61d0699a3b7ed9ac9e1ad7f1527c15ebf55b3c",
+   "format": 1
+  },
+  {
+   "name": "test-requirements.txt",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "65414854d0c76b6053b0a9aef3fa99a8303ff46167c2987bbee335b486257953",
+   "format": 1
+  },
+  {
+   "name": "setup.cfg",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "125fefc5c9470b8e72cffc06937c30e2bc073f4ca6c1a593f131a6e1fd76edf2",
+   "format": 1
+  },
+  {
+   "name": "LICENSE",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "8b1ba204bb69a0ade2bfcf65ef294a920f6bb361b317dba43c7ef29d96332b9b",
+   "format": 1
+  },
+  {
+   "name": "plugins",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "plugins/doc_fragments",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "plugins/module_utils",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "plugins/module_utils/openshift_registry.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "5bba331c6e8bba6f6cc9f40df252eceabc6f7b911b59e0566965ed5e57e69cbe",
+   "format": 1
+  },
+  {
+   "name": "plugins/module_utils/openshift_adm_prune_deployments.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "4168d8b2f2836f443b02940142240148a94fb7342419b092e3dac48e0a5e18bf",
+   "format": 1
+  },
+  {
+   "name": "plugins/module_utils/openshift_images_common.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "ee993443f02066638609b2eaac9a28147c1bcaf773e505e9b1baaf12b3305974",
+   "format": 1
+  },
+  {
+   "name": "plugins/module_utils/openshift_process.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "d3c9f3f3e558fcbacd40fe3772804190b7c4edfe318b80d7279e78d996ab7b73",
+   "format": 1
+  },
+  {
+   "name": "plugins/module_utils/openshift_ldap.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "eeb3208520982e581a076f693045f6a735e4afa691a795fb6376ba24e69e6af0",
+   "format": 1
+  },
+  {
+   "name": "plugins/module_utils/openshift_import_image.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "747b6a5dc74f1a86f9d3e1d529f6fe8d01c90b89cd1621ca6e073b493bf2b31f",
+   "format": 1
+  },
+  {
+   "name": "plugins/module_utils/k8s.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "1f482591624204a1f9a046eee854fd7948b18fb358371f48fbb8482447ea22d6",
+   "format": 1
+  },
+  {
+   "name": "plugins/module_utils/openshift_adm_prune_images.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "187908c7701d42f33c6df9557cce7adb30a5ec09d59b0af2295c2e54ae419027",
+   "format": 1
+  },
+  {
+   "name": "plugins/module_utils/openshift_adm_prune_auth.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "f394773215de6434b20bbb7bb271cd22fb47850f80242cfa135e06c23ed43b99",
+   "format": 1
+  },
+  {
+   "name": "plugins/module_utils/openshift_docker_image.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "d23dfbad39579c35a2a39bbf0e18e2e0e8bc3a0122c37d0fc87c2ea125f5af2c",
+   "format": 1
+  },
+  {
+   "name": "plugins/module_utils/openshift_groups.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "acf092b49c65dce686cba9aa8d4112e8d5dbb2058d03328396ba0c6778ad002e",
+   "format": 1
+  },
+  {
+   "name": "plugins/connection",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "plugins/connection/oc.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "07e86c005a7358ef4dab6222d00cd67b5762024507fc568fbe06ef4046b3cd2f",
+   "format": 1
+  },
+  {
+   "name": "plugins/inventory",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "plugins/inventory/openshift.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "d77705e12db8fad9f265d53f8f1a7943ebeebcb871f4b3b0e606a722b9eae926",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/openshift_adm_groups_sync.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "9118de0cf6bbef8ad1b6c7c6b8a9e959b18703f3062fe3f03eb8cde287613f3f",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/openshift_registry_info.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "23bdadb9a8d28b99490eaf3d6e92c754bd6e06945331bbb38e9637304d4f121e",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/openshift_auth.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "a400e4aeb5ec9eeb4687cbe49c6d25271ec45127d4a7417ec8838a771e8dc859",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/openshift_route.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "b66019d85a846747002c822468e2a8961c3d808bac3c7a9412c021958e4f7774",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/openshift_adm_prune_deployments.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "18874f205927c54f3f4a9cc9704ded8d45c62e2a70ad9408cd85b554949c3224",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/openshift_process.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e93c338d2005e1ef7830b555e3d70e8a5eb7b5212ebabd74def8eaf2987f9cdf",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/openshift_import_image.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "b682ae572eb5d29dd56cd3d6568035bb34948e9ab15df508a25532d98b65db22",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/k8s.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "258f3f1eec03747dbeb35c0595fb850ec84c0d49effc94753fbec387313d6051",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/openshift_adm_prune_images.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "64210e6cbb2990b46c5b7d1964e60d8189321fd228c5535a9839982c4e6314ce",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/openshift_adm_prune_auth.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "bb93feb8988eed0da36cb56f74e55e10ab6bcc340e2bf457dc9223c42ac79990",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules/openshift_adm_migrate_template_instances.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "1b564cffc0c0808e5bdcb6b4015a5a05f8aac3bbdb410c5dcd40433106618a58",
+   "format": 1
+  },
+  {
+   "name": "Makefile",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "d842c5d10e8069963d799a01ed7c2ebb895b49b90276a95d2a5eabb5e1d0c8e2",
+   "format": 1
+  },
+  {
+   "name": "molecule",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "molecule/default",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "molecule/default/prepare.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "c5895443b0e8fa7d6a9239917acff155a5b013532386a91d08fc8d89878977b1",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/README.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "75d6935060001109bea00ffcf6d289b29e7aa6afeaba2e1e1b85d767062f4da8",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "molecule/default/tasks/openshift_import_images.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "0d04353ffb54552eb3f6a16dd3d9758e662617b061e9afbe160f9e58e8b15af3",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/tasks/validate_installed.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "83ab6da80065a277d49c5922a1ac534cbd964a255dedf078217e0be2b57de136",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/tasks/openshift_adm_prune_deployments.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "36108f6f799d09807a1c59e8446b68e8880bde7e4a310cda336d75d27a1163ed",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/tasks/openshift_adm_prune_auth_roles.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e413ebb4470d97b2eaa086c61aa1a787fd320ac66d4c244e72ac20dc1b55e93d",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/tasks/validate_not_installed.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "5c44ec0c168aa597d768842cf2bd448f3054ea52f51ab5f4d9c755fcba398c7e",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/tasks/openshift_prune_images.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "2a01457d3281a37da2a2c03fcd740a906a89c6a63fc5fc636f705887fcc0f749",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/tasks/openshift_auth.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "493acdb7db83444287be41e6799eb1d2415f99a258aa2ef99a457f1579f7533c",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/tasks/openshift_route.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "78409dec0e3583611ec9861b1012cacb9fd54420f56ca9d5fa98976c348960e8",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/tasks/openshift_adm_prune_auth_clusterroles.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "f470abfc5be591dfd4881c4a6933b948808d99c27b858e4fa1056d880392fd5c",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/tasks/openshift_process.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "93a9b6ad9b2f0ab60f5b353873965ad6aad0789361baba50249b8b1f1672823e",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/destroy.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "26670c28263a4f354e646c222e2c59ccfcb3cd807fe07d531e9874fc3748a44c",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/roles",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "molecule/default/roles/openshift_adm_groups",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "molecule/default/roles/openshift_adm_groups/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "molecule/default/roles/openshift_adm_groups/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "5d44f4831059d0b53a05a42c4bc8a808f1b24b52f7756674a7a94a603d9ad860",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/roles/openshift_adm_groups/tasks/augmentedActiveDirectory.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "c19f771046476b5d2193540dd4dbc4b2ff2ba942eeb85d9abb95a28dcc812f88",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/roles/openshift_adm_groups/tasks/activeDirectory.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "5fd3aeed0f00379400def014b7bb2297383118bb2b5e386bce338b2644b9bc7b",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/roles/openshift_adm_groups/tasks/rfc2307.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "7be3b2613113ef47e6a1d8f69ca24f7a545557c7651927eec11e52ff64ebd078",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/roles/openshift_adm_groups/library",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "molecule/default/roles/openshift_adm_groups/library/openshift_ldap_entry.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "8e0d7d997ba74938fef19fead2cf1d2151644ad999e2285b0d769c89804abf5e",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/roles/openshift_adm_groups/library/openshift_ldap_entry_info.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "0b98d02bb07c0ae7ba4da80ef95c02d2476a0106bd8f198779d296c81323bbfe",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/roles/openshift_adm_groups/meta",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "molecule/default/roles/openshift_adm_groups/meta/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "ab3a4abb3ae80c9f5bf7daef34d7d5462567dbe202d9d4fb03c5504f925ca829",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/roles/openshift_adm_groups/templates",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "molecule/default/roles/openshift_adm_groups/templates/ad",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "molecule/default/roles/openshift_adm_groups/templates/ad/definition.j2",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "f59a7ee4f37de0040f293b615b45092f5bc9fb36f832d81ea6f0a7155bb2c1bd",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/roles/openshift_adm_groups/templates/ad/sync-config.j2",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "fef496b8ba026e34cdef374f373a15948db2bf6147bff5eb4ebdba4d1b3a4381",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/roles/openshift_adm_groups/templates/augmented-ad",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "molecule/default/roles/openshift_adm_groups/templates/augmented-ad/definition.j2",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "a2db659cc8d7467e4d9e78029027d6fff6cc1fd38e54c6ca954a9a64633470d0",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/roles/openshift_adm_groups/templates/augmented-ad/sync-config.j2",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "76c20cd498ced5c2417a71611b35bde1b22b537fd106b5d8fecf1b896d7d5074",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/roles/openshift_adm_groups/templates/rfc2307",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "molecule/default/roles/openshift_adm_groups/templates/rfc2307/definition.j2",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "5e2d7b8287dd1b1ad0067eb8a38d282ff43f95e3a91c3778b86205a14988b434",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/roles/openshift_adm_groups/templates/rfc2307/sync-config.j2",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "64cdf5017cb257f3b26d7eb858c8295313684b1147f0baee3f657fc3dc36c1f9",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/roles/openshift_adm_groups/defaults",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "molecule/default/roles/openshift_adm_groups/defaults/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "1bd380f6c0cdf0c2b25e6bf27e4304566f6b9efbbeaf15da3847a9744d685a72",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/molecule.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "fa361fd444eafb97ecc055d151a4a79269e0e45c421b911fb11a18ccb7643311",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/converge.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "afdaaa0d544e43fb3af44c88d699e5715a7154cd56b310437e73684edd0344f7",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/files",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "molecule/default/files/nginx.env",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "a68c2914576119a809943116ce0050ca221c5b8f3a6722fa6abbf15dababde5f",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/files/setup-crd.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "ec1fd5a8731fd07a20799b6b84aa815aa2ded58b2107bef808d96dfe58137d44",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/files/pod-template.yaml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "5fcb22787bccf2a5e1b6b90617f1aabadb71e9c9a906763e68b8573ef468f09a",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/files/simple-template.yaml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "acbc61a1278772f1fd80a1bdb6546b6022842f7fd1c1b9aaf8bd65b606d93a2b",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/files/kuard-invalid-type.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "c0e8aa083eecb5c4d92108af83f9a2c931a2e5bbb766af4792adc4fb9fd9d32d",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/files/example.env",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "3701367ea0a79158d476e168c1b1e64639f703da926e63045cba5cfdbb6c3576",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/files/kuard-extra-property.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "27a06de7ca760698dc1d3c46ef12e40e214ae319a791a3965806b30adca06de0",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/files/crd-resource.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "4921362ac3c4afac5f42ebb90b37bcb75e1fe20929bb0e45d0df4c190d28f577",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/verify.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "4b08d1607a040305d633cbe7f534f51998d23a039230cfeb574d1196f1f94792",
+   "format": 1
+  },
+  {
+   "name": "molecule/default/vars",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "molecule/default/vars/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "75f11fae6d7f1e6574152509a4d7ad306966fc94eda2e610dfdb8a529a531228",
+   "format": 1
+  },
+  {
+   "name": "ci",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ci/downstream.sh",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "60e894036ba266519aaa6452e0a48b8656741c273c0ba6abffc6b64e090d66ad",
+   "format": 1
+  },
+  {
+   "name": "ci/downstream_fragments.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "9815e2aa84aef5d396fd07ddb371fa87362ade6fbe72d829e4d5983abe8af453",
+   "format": 1
+  },
+  {
+   "name": "ci/doc_fragment_modules.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e5f5e24396a2cc86faedf6d0b7a3835db06bbe6fc7b534018ed85ebecfa39e09",
+   "format": 1
+  },
+  {
+   "name": "ci/incluster_integration.sh",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "012ffb20a006094a4e8a00ead7947a196c477c4eb071a1dad5ffe42f509935e1",
+   "format": 1
+  },
+  {
+   "name": "ci/Dockerfile",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "372a61931849250f7805a630fd5fc8b854f457d2752e1a70912beaa4773855ec",
+   "format": 1
+  },
+  {
+   "name": "CHANGELOG.rst",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "063bb255ebc41db30c503b5586e28c5f3d8432de8737a2b0b6e40573e2dfffc4",
+   "format": 1
+  },
+  {
+   "name": "requirements.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "119cc6e4595ca579ef29d3aa14f4c219af91e9e5efdbb676404509ac3c3e7c0d",
+   "format": 1
+  }
+ ],
+ "format": 1
+}

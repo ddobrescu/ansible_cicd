@@ -1,0 +1,41 @@
+{
+ "collection_info": {
+  "namespace": "redhat",
+  "name": "openshift",
+  "version": "2.2.0",
+  "authors": [
+   "geerlingguy (https://www.jeffgeerling.com/)",
+   "fabianvf (https://github.com/fabianvf)",
+   "willthames (https://github.com/willthames)",
+   "Akasurde (https://github.com/akasurde)"
+  ],
+  "readme": "README.md",
+  "tags": [
+   "kubernetes",
+   "k8s",
+   "cloud",
+   "infrastructure",
+   "openshift",
+   "okd",
+   "cluster"
+  ],
+  "description": "OpenShift Collection for Ansible.",
+  "license": [],
+  "license_file": "LICENSE",
+  "dependencies": {
+   "kubernetes.core": ">=2.1.0,<2.4.0"
+  },
+  "repository": "https://github.com/openshift/community.okd",
+  "documentation": "",
+  "homepage": "",
+  "issues": "https://github.com/openshift/community.okd/issues"
+ },
+ "file_manifest_file": {
+  "name": "FILES.json",
+  "ftype": "file",
+  "chksum_type": "sha256",
+  "chksum_sha256": "d92f3ef74d29b0649d5bccd3601f565a9025d25f8f8476f0158f79a8e3ef16c1",
+  "format": 1
+ },
+ "format": 1
+}
