@@ -1,4 +1,4 @@
---
+---
 - name: launching an ec2 instance
   hosts: localhost
   connection: local
