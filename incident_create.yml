@@ -1,3 +1,6 @@
+# define in survey servicenow_username and servicenow_password
+# You can use EE quay.io/acme_corp/servicenow-ee:latest	
+
 ---
 - name: Open a ServiceNow ticket
   hosts: localhost
@@ -23,25 +26,19 @@
           password: "{{ servicenow_password }}"
         state: new
         caller: "{{ servicenow_username }}"
-        short_description: "User created a new incident using Ansible Automation Platform"
-        description: "Usersuccessfully created a new incident!"
+        short_description: "[{{ ansible_user }}] created a new incident from Ansible Automation Platform"
+        description: "A new deployment started"
         impact: low
         urgency: low
-#      
-#        instance: "{{ servicenow_instance }}"
-#        username: "{{ servicenow_username }}"
-#        password: "{{ servicenow_password }}"
-#        data:
-#          short_description: "{{ ticket_short_description }}"
-#          description: "{{ ticket_description }}"
-#        state: new
-#        caller: "Dan Dobrescu"
-#        impact: low
-#        urgency: low
-      register: result
+      register: new_incident
 
-    - name: Display the ServiceNow ticket number
-      debug:
-        msg: "ServiceNow ticket number: {{ result.record.number }}"
+
+    - set_fact:
+        incident_number_cached: "{{ new_incident.record.number }}"
+        cacheable: true
+
+    - debug:
+        msg: "A new incident has been created: {{ new_incident.record.number }}"
+        
 
 
