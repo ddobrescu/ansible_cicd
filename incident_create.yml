@@ -1,6 +1,7 @@
 ---
 - name: Open a ServiceNow ticket
   hosts: localhost
+  connection: local
   gather_facts: false
   collections:
     - servicenow.itsm
