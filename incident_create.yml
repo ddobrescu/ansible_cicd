@@ -17,16 +17,23 @@
 
     - name: Create a ServiceNow ticket
       servicenow.itsm.incident:
-        instance: "{{ servicenow_instance }}"
-        username: "{{ servicenow_username }}"
-        password: "{{ servicenow_password }}"
-        data:
-          short_description: "{{ ticket_short_description }}"
-          description: "{{ ticket_description }}"
         state: new
-        caller: "Dan Dobrescu"
+        caller: "Dan"
+        short_description: "User created a new incident using Ansible Automation Platform"
+        description: "Usersuccessfully created a new incident!"
         impact: low
         urgency: low
+#      
+#        instance: "{{ servicenow_instance }}"
+#        username: "{{ servicenow_username }}"
+#        password: "{{ servicenow_password }}"
+#        data:
+#          short_description: "{{ ticket_short_description }}"
+#          description: "{{ ticket_description }}"
+#        state: new
+#        caller: "Dan Dobrescu"
+#        impact: low
+#        urgency: low
       register: result
 
     - name: Display the ServiceNow ticket number
