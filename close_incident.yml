@@ -1,0 +1,33 @@
+# define in survey servicenow_username and servicenow_password
+# You can use EE quay.io/acme_corp/servicenow-ee:latest	
+
+---
+- name: Open a ServiceNow ticket
+  hosts: localhost
+  connection: local
+  # using this to get the time/date
+  gather_facts: true
+  collections:
+    - servicenow.itsm
+  
+  vars:
+    servicenow_instance: "https://ansible.service-now.com"
+    #servicenow_username: "your-username"
+    #servicenow_password: "your-password"
+    #ticket_short_description: "Ansible Deploy new build"
+    #ticket_description: "A new build was pushed into the dev env."
+
+  tasks:
+
+    - name: Change the state of the incident {{ incident_number_cached }} to closed
+      servicenow.itsm.incident:
+        instance:
+          host: "{{ servicenow_instance }}"
+          username: "{{ servicenow_username }}"
+          password: "{{ servicenow_password }}"
+        state: closed
+        close_code: "Solved (Permanently)"
+        close_notes: "Closed with ansible servicenow.itsm"
+        other:
+          active: false
+        number: "{{ incident_number_cached }}"
