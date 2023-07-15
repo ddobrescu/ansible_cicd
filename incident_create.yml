@@ -13,8 +13,8 @@
     servicenow_instance: "https://ansible.service-now.com"
     #servicenow_username: "your-username"
     #servicenow_password: "your-password"
-    ticket_short_description: "Ansible Deploy new build"
-    ticket_description: "A new build was pushed into the dev env."
+    #ticket_short_description: "Ansible Deploy new build"
+    #ticket_description: "A new build was pushed into the dev env."
 
   tasks:
 
@@ -27,7 +27,7 @@
         state: new
         caller: "{{ servicenow_username }}"
         short_description: "[{{ ansible_user }}] created a new incident from Ansible Automation Platform on {{ ansible_date_time.date }}"
-        description: "A new deployment started"
+        description: "A new build was pushed into the dev env"
         impact: low
         urgency: low
       register: new_incident
