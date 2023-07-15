@@ -25,8 +25,8 @@
           username: "{{ servicenow_username }}"
           password: "{{ servicenow_password }}"
         state: new
-        caller: "Dan Dobrescu"
-        short_description: "[{{ ansible_user }}] created a new incident from Ansible Automation Platform"
+        caller: "{{ servicenow_username }}"
+        short_description: "[{{ ansible_user }}] created a new incident from Ansible Automation Platform on {{ ansible_date_time.date }}"
         description: "A new deployment started"
         impact: low
         urgency: low
