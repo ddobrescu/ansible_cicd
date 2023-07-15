@@ -17,6 +17,10 @@
 
     - name: Create a ServiceNow ticket
       servicenow.itsm.incident:
+        instance:
+          host: "{{ servicenow_instance }}"
+          username: "{{ servicenow_username }}"
+          password: "{{ servicenow_password }}"
         state: new
         caller: "Dan"
         short_description: "User created a new incident using Ansible Automation Platform"
