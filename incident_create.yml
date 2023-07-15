@@ -27,7 +27,7 @@
         state: new
         caller: "{{ servicenow_username }}"
         short_description: "[{{ tower_user_name }}] created a new incident from Ansible Automation Platform"
-        description: "A new build was pushed into the dev env"
+        description: "A new build was pushed into the dev env with JobID {{ tower_job_id }}"
         impact: low
         urgency: low
       register: new_incident
