@@ -5,7 +5,8 @@
 - name: Open a ServiceNow ticket
   hosts: localhost
   connection: local
-  gather_facts: false
+  # using this to get the time/date
+  gather_facts: true
   collections:
     - servicenow.itsm
   
