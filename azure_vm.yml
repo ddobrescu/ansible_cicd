@@ -1,0 +1,111 @@
+---
+- name: Create RHEL VM on Azure and wait for SSH connection
+  hosts: localhost
+  connection: local
+  gather_facts: no
+
+  vars:
+    azure_subscription_id: "<your_subscription_id>"
+    azure_client_id: "<your_client_id>"
+    azure_secret: "<your_secret>"
+    azure_tenant: "<your_tenant_id>"
+    azure_resource_group: "<your_resource_group>"
+    azure_vm_name: "<your_vm_name>"
+    azure_vm_size: "<your_vm_size>"
+    azure_admin_username: "<your_admin_username>"
+    azure_admin_password: "<your_admin_password>"
+    azure_ssh_public_key_path: "<path_to_ssh_public_key>"
+
+  tasks:
+    - name: Create resource group
+      azure_rm_resourcegroup:
+        name: "{{ azure_resource_group }}"
+        location: eastus
+        subscription_id: "{{ azure_subscription_id }}"
+        client_id: "{{ azure_client_id }}"
+        secret: "{{ azure_secret }}"
+        tenant: "{{ azure_tenant }}"
+      register: rg_result
+
+    - name: Create virtual network
+      azure_rm_virtualnetwork:
+        resource_group: "{{ azure_resource_group }}"
+        name: "{{ azure_vm_name }}-vnet"
+        address_prefixes: "10.0.0.0/16"
+        subscription_id: "{{ azure_subscription_id }}"
+        client_id: "{{ azure_client_id }}"
+        secret: "{{ azure_secret }}"
+        tenant: "{{ azure_tenant }}"
+      register: vnet_result
+
+    - name: Create subnet
+      azure_rm_subnet:
+        resource_group: "{{ azure_resource_group }}"
+        virtual_network_name: "{{ azure_vm_name }}-vnet"
+        name: "{{ azure_vm_name }}-subnet"
+        address_prefix: "10.0.0.0/24"
+        subscription_id: "{{ azure_subscription_id }}"
+        client_id: "{{ azure_client_id }}"
+        secret: "{{ azure_secret }}"
+        tenant: "{{ azure_tenant }}"
+      register: subnet_result
+
+    - name: Create public IP
+      azure_rm_publicipaddress:
+        resource_group: "{{ azure_resource_group }}"
+        allocation_method: Static
+        name: "{{ azure_vm_name }}-publicip"
+        subscription_id: "{{ azure_subscription_id }}"
+        client_id: "{{ azure_client_id }}"
+        secret: "{{ azure_secret }}"
+        tenant: "{{ azure_tenant }}"
+      register: publicip_result
+
+    - name: Create network interface
+      azure_rm_networkinterface:
+        resource_group: "{{ azure_resource_group }}"
+        virtual_network_name: "{{ azure_vm_name }}-vnet"
+        subnet_name: "{{ azure_vm_name }}-subnet"
+        public_ip_name: "{{ azure_vm_name }}-publicip"
+        name: "{{ azure_vm_name }}-nic"
+        subscription_id: "{{ azure_subscription_id }}"
+        client_id: "{{ azure_client_id }}"
+        secret: "{{ azure_secret }}"
+        tenant: "{{ azure_tenant }}"
+      register: nic_result
+
+    - name: Create virtual machine
+      azure_rm_virtualmachine:
+        resource_group: "{{ azure_resource_group }}"
+        name: "{{ azure_vm_name }}"
+        vm_size: "{{ azure_vm_size }}"
+        admin_username: "{{ azure_admin_username }}"
+        admin_password: "{{ azure_admin_password }}"
+        network_interfaces: "{{ [nic_result.id] }}"
+        os_type: linux
+        image:
+          offer: RHEL
+          publisher: RedHat
+          sku: '8.4'
+          version: latest
+        ssh_password_enabled: False
+        ssh_public_keys:
+          - path: "/home/{{ azure_admin_username }}/.ssh/authorized_keys"
+            key_data: "{{ lookup('file', azure_ssh_public_key_path) }}"
+        subscription_id: "{{ azure_subscription_id }}"
+        client_id: "{{ azure_client_id }}"
+        secret: "{{ azure_secret }}"
+        tenant: "{{ azure_tenant }}"
+      register: vm_result
+
+    - name: Wait for SSH connectivity
+      wait_for:
+        host: "{{ publicip_result.ip_address }}"
+        port: 22
+        delay: 10
+        timeout: 300
+        state: started
+
+    - name: Print SSH connection information
+      debug:
+        msg: "SSH connection to {{ azure_admin_username }}@{{ publicip_result.ip_address }}"
