@@ -1,0 +1,35 @@
+---
+- name: Open a ServiceNow ticket
+  hosts: localhost
+  gather_facts: false
+  collections:
+    - servicenow.itsm
+  
+  vars:
+    servicenow_instance: "https://ansible.service-now.com"
+    #servicenow_username: "your-username"
+    #servicenow_password: "your-password"
+    ticket_short_description: "Ansible Deploy new build"
+    ticket_description: "A new build was pushed into the dev env."
+
+  tasks:
+
+    - name: Create a ServiceNow ticket
+      servicenow.itsm.incident:
+        instance: "{{ servicenow_instance }}"
+        username: "{{ servicenow_username }}"
+        password: "{{ servicenow_password }}"
+        data:
+          short_description: "{{ ticket_short_description }}"
+          description: "{{ ticket_description }}"
+        state: new
+        caller: "Dan Dobrescu"
+        impact: low
+        urgency: low
+      register: result
+
+    - name: Display the ServiceNow ticket number
+      debug:
+        msg: "ServiceNow ticket number: {{ result.record.number }}"
+
+
