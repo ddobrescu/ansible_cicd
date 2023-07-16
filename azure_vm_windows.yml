@@ -158,7 +158,7 @@
         storage_container: "vms{{vm_name}}"
         storage_blob: "{{vm_name}}.vhd"
         network_interfaces: "nic01{{vm_name}}"
-        type_handler_version: 1.9
+        #type_handler_version: 1.9
         tags: 
           Name: "{{ instance_name }}"
           Owner: Dan
@@ -175,7 +175,7 @@
         virtual_machine_name: "{{ vm_name }}"
         publisher: Microsoft.Compute
         virtual_machine_extension_type: CustomScriptExtension
-        #type_handler_version: 1.9
+        type_handler_version: 1.9
         settings:
           CommandToExecute: "powershell -ExecutionPolicy Unrestricted -file active_ansible.ps1" 
           FileUris: [ "https://raw.githubusercontent.com/michaellessard/ansible/master/active_ansible.ps1" ]
