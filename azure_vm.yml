@@ -79,6 +79,10 @@
         name: "pbi01{{ vm_name }}"
       register: publicip_result
 
+    - name: Debug publicip_result
+      debug:
+        var: publicip_result
+
     - name: Create security group that allows incoming traffic on SSH/HTTP/HTTPS/8080
       azure_rm_securitygroup:
         client_id: "{{ azure_client_id }}"
