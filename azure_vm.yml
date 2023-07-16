@@ -165,7 +165,7 @@
 
     - name: Wait for SSH connectivity
       wait_for:
-        host: "{{ publicip_result.ip_address }}"
+        host: "{{ publicip_result.state.ip_address }}"
         port: 22
         delay: 10
         timeout: 300
@@ -173,4 +173,4 @@
 
     - name: Print SSH connection information
       debug:
-        msg: "SSH connection to {{ default_username }}@{{ publicip_result.ip_address }}"
+        msg: "SSH connection to {{ default_username }}@{{ publicip_result.state.ip_address }}"
