@@ -7,15 +7,23 @@
   ansible_winrm_transport: basic
   ansible_winrm_server_cert_validation: ignore
   tasks:
+    - name: 'Check free space in C:'
+      win_shell: 'write-host ([math]::Round((Get-PSDrive C | Select-Object Free).free / 1024 / 1024 / 1024,2))'
+      register: freespace
 
-  - name: Single line PowerShell
-    win_shell: Set-Content -Path C:\Users\test.txt -Value ' {{ value_message | default ('Hello there.') }} '
+    - name: report free disk space
+      debug:
+        msg: |
+          "{{ freespace.stdout }} GB"
+          
+    - name: Single line PowerShell
+      win_shell: Set-Content -Path C:\Users\test.txt -Value ' {{ value_message | default ('Hello there.') }} '
 
-  - name: Run multi-lined shell commands
-    win_shell: |
-        $text = Get-Content C:\Temp\test.txt
-        $text += ' General Kenobi....you are a bold one'
-        Set-Content -Path C:\Users\test2.txt -Value $text
+    - name: Run multi-lined shell commands
+      win_shell: |
+          $text = Get-Content C:\Temp\test.txt
+          $text += ' General Kenobi....you are a bold one'
+          Set-Content -Path C:\Users\test2.txt -Value $text
         
   #- name: Copy a single file
   #  win_copy:
