@@ -174,3 +174,7 @@
     - name: Print SSH connection information
       debug:
         msg: "SSH connection to {{ default_username }}@{{ publicip_result.state.ip_address }}"
+
+    - name: Debug Password
+      debug:
+        var: default_password
