@@ -3,7 +3,7 @@
   tasks:
 
   - name: Single line PowerShell
-    win_shell: Set-Content -Path C:\Users\test.txt -Value ' {{ value_message | default "Hello there." }} '
+    win_shell: Set-Content -Path C:\Users\test.txt -Value ' {{ value_message | default ('Hello there.') }} '
 
   - name: Run multi-lined shell commands
     win_shell: |
