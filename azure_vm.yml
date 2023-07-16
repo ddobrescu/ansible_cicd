@@ -160,7 +160,7 @@
 
 
     - name: Wait for SSH connectivity
-        wait_for:
+      wait_for:
         host: "{{ publicip_result.ip_address }}"
         port: 22
         delay: 10
