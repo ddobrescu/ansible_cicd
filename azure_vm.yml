@@ -10,7 +10,7 @@
     storage_class: Standard_LRS
     virtual_network_cidr: 10.0.0.0/24
     default_username: "ddobrescu"
-    default_password: "1qaz2wsX!"
+    default_password: "{{ vm_password | default('1qaz2wsX!') }}"
     vm_size: Standard_D2_v3
     ip_address: "10.0.0.10"
     azure_client_id: "{{ lookup('env', 'AZURE_CLIENT_ID')}}"
@@ -53,6 +53,7 @@
         resource_group: "{{ res_group }}"
         name: "vn{{ vm_name }}"
         address_prefixes: "{{virtual_network_cidr}}"
+      register: vnet_result
 
     - name: Add subnet
       azure_rm_subnet:
@@ -64,6 +65,8 @@
         name: "sn{{ vm_name }}"
         address_prefix: "{{virtual_network_cidr}}"
         virtual_network: "vn{{ vm_name }}"
+      register: subnet_result
+
 
     - name: Create public ip for RHEL VM
       azure_rm_publicipaddress:
@@ -74,6 +77,7 @@
         resource_group: "{{ res_group }}"
         allocation_method: Static
         name: "pbi01{{ vm_name }}"
+      register: publicip_result
 
     - name: Create security group that allows incoming traffic on SSH/HTTP/HTTPS/8080
       azure_rm_securitygroup:
@@ -143,8 +147,26 @@
         admin_username: "{{ default_username }}"
         admin_password: "{{ default_password }}"
         network_interfaces: "nic01{{vm_name}}"
+        tags: 
+          Name: "{{ instance_name }}"
+          Owner: Dan
+          project: "{{ project_name | default('none') }}"
         image:
           offer: RHEL
           publisher: RedHat
           sku: '9_0'
           version: latest
+      register: vm_result
+
+
+    - name: Wait for SSH connectivity
+        wait_for:
+        host: "{{ publicip_result.ip_address }}"
+        port: 22
+        delay: 10
+        timeout: 300
+        state: started
+
+    - name: Print SSH connection information
+      debug:
+        msg: "SSH connection to {{ default_username }}@{{ publicip_result.ip_address }}"
