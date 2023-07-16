@@ -4,8 +4,8 @@
   become: true
   ansible_port: 5986
   ansible_connection: winrm
-  ansible_winrm_transport: basic
-  ansible_winrm_server_cert_validation: ignore
+  #ansible_winrm_transport: basic
+  #ansible_winrm_server_cert_validation: ignore
   tasks:
     - name: 'Check free space in C:'
       win_shell: 'write-host ([math]::Round((Get-PSDrive C | Select-Object Free).free / 1024 / 1024 / 1024,2))'
