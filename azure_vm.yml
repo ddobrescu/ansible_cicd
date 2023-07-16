@@ -81,7 +81,7 @@
 
     - name: Debug publicip_result
       debug:
-        var: publicip_result
+        var: publicip_result.ip_address
 
     - name: Create security group that allows incoming traffic on SSH/HTTP/HTTPS/8080
       azure_rm_securitygroup:
