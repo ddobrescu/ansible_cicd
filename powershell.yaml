@@ -4,6 +4,7 @@
 #  "ansible_winrm_transport": "basic",
 ---
 - hosts: all
+  ansible_connection: winrm
   gather_facts: no
   tasks:
     - name: 'Check free space in C:'
