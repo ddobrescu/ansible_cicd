@@ -9,7 +9,7 @@
     res_group_location: eastus
     storage_class: Standard_LRS
     virtual_network_cidr: 10.0.0.0/24
-    default_username: "mlessard"
+    default_username: "ddobrescu"
     default_password: "1qaz2wsX!"
     vm_size: Standard_D2_v3
     ip_address: "10.0.0.10"
