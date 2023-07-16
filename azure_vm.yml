@@ -11,7 +11,7 @@
     #azure_tenant: "<your_tenant_id>"
     azure_resource_group: "<your_resource_group>"
     azure_vm_name: "<your_vm_name>"
-    azure_vm_size: "<your_vm_size>"
+    azure_vm_size: "Dsv3"
     azure_admin_username: "<your_admin_username>"
     azure_admin_password: "<your_admin_password>"
     azure_ssh_public_key_path: "<path_to_ssh_public_key>"
