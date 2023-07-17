@@ -178,8 +178,8 @@
         type_handler_version: 1.9
         settings:
           CommandToExecute: "powershell -ExecutionPolicy Unrestricted -file active_ansible.ps1" 
-          #FileUris: [ "https://raw.githubusercontent.com/michaellessard/ansible/master/active_ansible.ps1" ]
-          FileUris: [ "https://github.com/AlbanAndrieu/ansible-windows/blob/master/files/ConfigureRemotingForAnsible.ps1" ]
+          FileUris: [ "https://raw.githubusercontent.com/ddobrescu/ansible_cicd/master/active_ansible.ps1" ]
+          #FileUris: [ "https://github.com/AlbanAndrieu/ansible-windows/blob/master/files/ConfigureRemotingForAnsible.ps1" ]
       ignore_errors: true
       register: create_windows_vm_extension      
 
