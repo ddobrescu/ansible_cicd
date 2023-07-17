@@ -5,8 +5,8 @@
 ---
 - hosts: all
   gather_facts: no
-  ansible_user: "ddobrescu"
-  ansible_password: "1qaz2wsX!"
+  #ansible_user: "ddobrescu"
+  #ansible_password: "1qaz2wsX!"
   ansible_connection: winrm
   ansible_winrm_transport: basic
   tasks:
