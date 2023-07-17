@@ -5,10 +5,6 @@
 ---
 - hosts: all
   gather_facts: no
-  #ansible_user: "ddobrescu"
-  #ansible_password: "1qaz2wsX!"
-  ansible_connection: winrm
-  ansible_winrm_transport: basic
   tasks:
     - name: 'Check free space in C:'
       win_shell: 'write-host ([math]::Round((Get-PSDrive C | Select-Object Free).free / 1024 / 1024 / 1024,2))'
