@@ -6,14 +6,14 @@
 - hosts: all
   gather_facts: no
   tasks:
-    - name: 'Check free space in C:'
-      win_shell: 'write-host ([math]::Round((Get-PSDrive C | Select-Object Free).free / 1024 / 1024 / 1024,2))'
-      register: freespace
+#    - name: 'Check free space in C:'
+#      win_shell: 'write-host ([math]::Round((Get-PSDrive C | Select-Object Free).free / 1024 / 1024 / 1024,2))'
+#      register: freespace
 
-    - name: report free disk space
-      debug:
-        msg: |
-          "{{ freespace.stdout }} GB"
+#    - name: report free disk space
+#      debug:
+#        msg: |
+#          "{{ freespace.stdout }} GB"
           
     - name: Single line PowerShell
       win_shell: Set-Content -Path C:\Users\test.txt -Value ' {{ value_message | default ('Hello there.') }} '
