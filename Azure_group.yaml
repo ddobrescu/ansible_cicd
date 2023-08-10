@@ -1,0 +1,12 @@
+---
+- name: "Test loading AD group info"
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: "Get group info."
+      azure.azcollection.azure_rm_adgroup_info:
+        tenant: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+        all: true
+      register: group_info
