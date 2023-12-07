@@ -2,7 +2,7 @@
 # You can use EE quay.io/acme_corp/servicenow-ee:latest	
 
 ---
-- name: Open a ServiceNow ticket
+- name: Close ServiceNow ticket
   hosts: localhost
   connection: local
   # using this to get the time/date
